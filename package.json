@@ -1,0 +1,42 @@
+{
+  "name": "alexa-us-capitals-skill",
+  "version": "1.0.0",
+  "description": "A simple Amazon Alexa Skill that quizzes you on US state capitals",
+  "main": "lambda/index.js",
+  "scripts": {
+    "test": "mocha test/**/*.test.js",
+    "lint": "eslint lambda/**/*.js test/**/*.js",
+    "deploy": "ask deploy",
+    "debug": "ask dialog --locale en-US"
+  },
+  "keywords": [
+    "alexa",
+    "skill",
+    "us",
+    "capitals"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ask-sdk-core": "^2.12.1",
+    "ask-sdk-model": "^1.38.1"
+  },
+  "devDependencies": {
+    "ask-sdk-local-debug": "^1.1.0",
+    "ask-sdk-test": "^2.7.42",
+    "chai": "^4.3.7",
+    "eslint": "^9.25.1",
+    "@eslint/js": "^9.25.1",
+    "@eslint/config-array": "^0.20.0",
+    "@eslint/object-schema": "^2.1.6",
+    "globals": "^15.0.0",
+    "mocha": "^10.2.0",
+    "sinon": "^16.1.1"
+  },
+  "overrides": {
+    "querystring": "npm:querystringify@2.2.0",
+    "glob": "^10.3.10",
+    "inflight": "npm:@isaacs/inflight@2.0.1",
+    "rimraf": "^5.0.5"
+  }
+}

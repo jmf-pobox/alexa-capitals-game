@@ -1,0 +1,71 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "u s capitals",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "Ask",
+                    "slots": [],
+                    "samples": [
+                        "quiz me",
+                        "start a quiz",
+                        "ask me a question",
+                        "test me"
+                    ]
+                },
+                {
+                    "name": "Answer",
+                    "slots": [
+                        {
+                            "name": "State",
+                            "type": "AMAZON.US_STATE"
+                        }
+                    ],
+                    "samples": [
+                        "what is the capital of {State}",
+                        "tell me the capital of {State}",
+                        "capital of {State}"
+                    ]
+                },
+                {
+                    "name": "Response",
+                    "slots": [
+                        {
+                            "name": "Capital",
+                            "type": "AMAZON.US_CITY"
+                        }
+                    ],
+                    "samples": [
+                        "is it {Capital}",
+                        "the capital is {Capital}",
+                        "I think it's {Capital}",
+                        "{Capital}"
+                    ]
+                },
+                {
+                    "name": "Quit",
+                    "slots": [],
+                    "samples": [
+                        "quit",
+                        "exit",
+                        "stop",
+                        "end"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
