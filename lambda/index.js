@@ -30,7 +30,7 @@ const ErrorHandler = {
 };
 
 // Skill ID - replace with your skill ID
-const SKILL_ID = 'amzn1.echo-sdk-ams.app.ffc466b9-e51f-43bc-b203-5391844666ad';
+const SKILL_ID = 'amzn1.ask.skill.cf17cd64-e4c3-4210-b7c1-121b33aeb2c3';
 
 // Lambda handler function
 exports.handler = Alexa.SkillBuilders.custom()
