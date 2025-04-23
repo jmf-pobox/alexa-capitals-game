@@ -330,7 +330,7 @@ describe('Alexa Skill Handlers', () => {
             
             expect(SessionEndedRequestHandler.canHandle(handlerInput)).to.be.true;
             
-            const response = SessionEndedRequestHandler.handle(handlerInput);
+            SessionEndedRequestHandler.handle(handlerInput);
             
             // Verify logging
             expect(consoleLogSpy.calledWith(sinon.match(/Session ended with reason/))).to.be.true;
