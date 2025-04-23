@@ -25,10 +25,7 @@
     "ask-sdk-local-debug": "^1.1.0",
     "ask-sdk-test": "^2.7.42",
     "chai": "^4.3.7",
-    "eslint": "^9.25.1",
-    "@eslint/js": "^9.25.1",
-    "@eslint/config-array": "^0.20.0",
-    "@eslint/object-schema": "^2.1.6",
+    "eslint": "^8.56.0",
     "globals": "^15.0.0",
     "mocha": "^10.2.0",
     "sinon": "^16.1.1"
