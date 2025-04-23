@@ -1,0 +1,44 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "US Capitals Quiz",
+          "summary": "Test your knowledge of US state capitals",
+          "description": "This skill quizzes you on the capitals of US states. You can ask for the capital of a specific state or take a quiz with random states.",
+          "examplePhrases": [
+            "Alexa, open US Capitals",
+            "Alexa, ask US Capitals what is the capital of California",
+            "Alexa, ask US Capitals to quiz me"
+          ],
+          "keywords": [
+            "quiz",
+            "capitals",
+            "states",
+            "geography",
+            "learning"
+          ]
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Launch the skill by saying 'Alexa, open US Capitals'. You can then ask for a capital with 'what is the capital of California' or start a quiz with 'quiz me'.",
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:975377310343:function:ask-USCapitalsQuiz-default-skil-AlexaSkillFunction-BpkB9ud17Yzi"
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false
+    }
+  }
+}

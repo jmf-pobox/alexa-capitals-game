@@ -18,8 +18,12 @@ This project follows the latest Alexa Skills Kit (ASK) SDK v2 structure:
   /test            # Test files
     /unit          # Unit tests
     /integration   # Integration test templates
+  /assets          # Skill assets (icons, etc.)
+  /infrastructure  # AWS CloudFormation templates
   /.github         # GitHub workflows
     /workflows     # CI/CD configuration
+  ask-resources.json # ASK CLI deployment configuration
+  skill.json       # Skill manifest (metadata, endpoint config)
   CLAUDE.md        # Guidance for Claude Code AI
   TODO.md          # Project task list
 ```
@@ -95,11 +99,56 @@ This project uses GitHub Actions for continuous integration:
 
 ## Deployment
 
-Deploy to AWS Lambda using the ASK CLI:
+### Prerequisites
+
+1. **Install ASK CLI**:
+   ```
+   npm install -g ask-cli
+   ```
+
+2. **Configure ASK CLI**:
+   ```
+   ask configure
+   ```
+   This will guide you through linking your Amazon Developer account.
+
+3. **AWS Permissions**:
+   Ensure your AWS user has these permissions:
+   - S3FullAccess (or more specific S3 permissions)
+   - CloudFormationFullAccess
+   - IAMFullAccess
+   - LambdaFullAccess
+
+### Deploy the Skill
+
+You can deploy the entire skill (interaction model, Lambda function, and metadata) with:
 
 ```
 npm run deploy
 ```
+
+Or deploy specific parts:
+
+```
+# Deploy only the interaction model
+ask deploy --target skill-metadata
+
+# Deploy only the Lambda function
+ask deploy --target skill-infrastructure
+```
+
+### Deployment Files
+
+- **ask-resources.json**: Configures deployment settings
+- **skill.json**: Defines skill metadata, permissions, and endpoints
+- **infrastructure/cfn-deployer/skill-stack.yaml**: AWS CloudFormation template for Lambda setup
+
+### Publishing
+
+After deployment, use the Alexa Developer Console to:
+1. Test your skill in the Test tab
+2. Complete certification requirements in the Distribution tab
+3. Submit for certification
 
 ## Testing with Voice
 
@@ -112,10 +161,19 @@ Once deployed, you can test by saying:
 ## Code Quality
 
 This project follows modern JavaScript best practices:
-- ESLint v9 for code linting
+- ESLint for code linting
 - Updated dependencies with no deprecation warnings
 - Comprehensive test coverage
 - Clean separation of concerns
+- Modular architecture using ASK SDK v2
+
+## Development Notes
+
+The project has been migrated from a monolithic structure to a modular ASK SDK v2 architecture:
+- Individual intent handlers in separate files
+- Modern Lambda function patterns
+- AWS CloudFormation deployment templates
+- ASK CLI deployment configuration
 
 ## Project Maintenance
 

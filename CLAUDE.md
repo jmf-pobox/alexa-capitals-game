@@ -41,3 +41,13 @@ Amazon Alexa Skill for quizzing users on US state capitals, built with the ASK S
 - Integration tests in test/integration/
 - Interaction model in models/
 - CI/CD configuration in .github/workflows/
+- Asset files in assets/
+- AWS CloudFormation templates in infrastructure/cfn-deployer/
+
+## Deployment
+- ASK CLI configuration in ask-resources.json
+- Skill manifest in skill.json
+- AWS Lambda code in lambda/ directory
+- Run `ask deploy` to deploy all components
+- Run `ask deploy --target skill-metadata` for just the interaction model
+- Run `ask deploy --target skill-infrastructure` for just the Lambda function
